@@ -15,7 +15,7 @@ def main():
         data = RequestSender.get_entries(league, 1000)
 
         collection = league + '-ladder'
-        writer.overwrite_data(collection, data)
+        # writer.overwrite_data(collection, data)
 
     elapsed = time.time() - start
     print("Runtime: {.3f}".format(elapsed))
