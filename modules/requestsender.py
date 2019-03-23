@@ -44,7 +44,7 @@ class RequestSender:
         entries = []
         offset = 0
         while offset < number:
-            limit = min(200, number)
+            limit = min(200, number - offset)
             entries += RequestSender.__send_request(league, offset, limit)
             offset += limit
 
