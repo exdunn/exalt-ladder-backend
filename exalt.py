@@ -11,11 +11,15 @@ def main():
     writer = DBWriter(MONGO_DB_CONNECT_STRING, DB_NAME)
     leagues = rq.get_leagues()
 
-    for league in leagues:
-        data = rq.get_entries(league, 500)
+    writer.update_data('Synthesis')
 
-        collection = league
-        writer.overwrite_data(collection, data)
+    # for league in leagues:
+    #     # data = rq.get_entries(league, 10)
+    #
+    #     collection = league
+    #     # writer.overwrite_data(collection, data)
+    #
+    #     writer.update_data(league)
 
     elapsed = time.time() - start
     print("Runtime: {}".format(elapsed))
